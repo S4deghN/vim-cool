@@ -30,7 +30,7 @@ function! s:StartHL()
         return
     endif
     " Highlight the current matching word differently
-    exec '2match IncSearch /\%#' . @/ . '/'
+    exec '2match IncSearch /\c\%#' . @/ . '/'
     let g:cool_is_searching = 1
     let [pos, rpos] = [winsaveview(), getpos('.')]
     silent! exe "keepjumps go".(line2byte('.')+col('.')-(v:searchforward ? 2 : 0))
